@@ -1,4 +1,7 @@
 {
+  "env": {
+    "MAILOSAUR_API_KEY": "Iq7n3kDHOUMXNMGB"
+  },
   "baseUrl": "https://dev.enigma-x.app",
   "clientUrl": "https://dev.crypto-company.enigma-x.app",
 
@@ -16,6 +19,15 @@
   "duplicate": ".MuiPaper-root > .MuiList-root > :nth-child(2)",
   "define": ".MuiPaper-root > .MuiList-root > :nth-child(3)",
   "define_as_global": ".MuiPaper-root > .MuiList-root > :nth-child(4)",
-  "define_as_wrokspace": ".MuiPaper-root > .MuiList-root > :nth-child(6)",
-  "rename": ".MuiPaper-root > .MuiList-root > :nth-child(8)"
+  "define_as_wrokspace": ".MuiPaper-root > .MuiList-root > :nth-child(5)",
+  "rename": ".MuiPaper-root > .MuiList-root > :nth-child(8)",
+
+  "digit_one": ":nth-child(1) > input",
+  "digit_two": ":nth-child(2) > input",
+  "digit_three": ":nth-child(3) > input",
+  "digit_four": ":nth-child(4) > input",
+  "digit_five": ":nth-child(5) > input",
+  "digit_six": ":nth-child(6) > input",
+
+  "select_another_way": "[style=\"padding-top: 20px;\"] > .MuiButtonBase-root > .MuiButton-label"
 }

@@ -1,1 +1,21 @@
-{}
+{
+  "baseUrl": "https://dev.enigma-x.app",
+  "clientUrl": "https://dev.crypto-company.enigma-x.app",
+
+  "viewportWidth": 2000,
+  "viewportHeight": 1000,
+
+  "username_btn": "[name=email]",
+  "password_btn": "[name=password]",
+  "signin_btn": "[data-cy=sign-in]",
+  "eye_icon": "[aria-label=\"toggle password visibility\"]",
+  "drawer": ".MuiDrawer-root > .MuiPaper-root",
+  "kabab": "#actions > .MuiSvgIcon-root",
+  "actions": ".MuiPaper-root > .MuiList-root",
+  "pin_unpin": ".MuiPaper-root > .MuiList-root > :nth-child(1)",
+  "duplicate": ".MuiPaper-root > .MuiList-root > :nth-child(2)",
+  "define": ".MuiPaper-root > .MuiList-root > :nth-child(3)",
+  "define_as_global": ".MuiPaper-root > .MuiList-root > :nth-child(4)",
+  "define_as_wrokspace": ".MuiPaper-root > .MuiList-root > :nth-child(6)",
+  "rename": ".MuiPaper-root > .MuiList-root > :nth-child(8)"
+}

@@ -60,7 +60,6 @@ describe("The Good Path: Auth process as client and making Dashboard Actions" /*
     cy.get("h6").should("be.visible").should("contain", "Welcome!");
 
     cy.get(signin_btn).invoke("attr", "data-cy").should("equal", "sign-in"); //cypress element css
-
     cy.get(signin_btn).invoke("css", "position").should("equal", "relative"); //cypress check css property value
 
     Cypress.env() ? cy.log(true) : cy.log(false);

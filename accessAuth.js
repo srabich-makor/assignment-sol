@@ -31,7 +31,7 @@ const streamRequest = (ws) => {
     try {
       ws.on("message", function incoming(data) {
         const obj = JSON.parse(data);
-        // console.log(obj);
+        console.log(obj.content);
         resolve(obj.content);
       });
     } catch (error) {
@@ -45,8 +45,8 @@ function waitFiveSec(ws) {
   if (ws.readyState === WebSocket.OPEN) {
     setTimeout(function () {
       ws.close();
+      logger.info("WS is Closed:: The readyState is::" + ws.readyState);
     }, milliseconds);
-    logger.info("WS is Closed::ws.readyState" + ws.readyState);
   }
 }
 
@@ -65,18 +65,20 @@ function waitFiveSec(ws) {
   logger.info(JWT);
 
   const ws = new WebSocket(`wss://dev.ws-api.enigma-x.io/?token=${JWT}`);
-
-  logger.info("Created new instance of WS", ws.readyState);
+  logger.info(
+    "Created new instance of WS, the readyState is::" + ws.readyState
+  );
 
   ws.on("open", function open() {
-    logger.info("Sent an 'open' event", ws.readyState);
-    //Payoad
-    // ws.send(
-    //   '{ "type": "subscription", "id": "bf5d15d0-415f-11ec-b255-ad01e0712738", "data" : { "products": ["BTC-USD"], "quantity": "1.0", "level": true, "high": true, "low": true } }'
-    // );
+    logger.info("Sent an 'open' event, the readyState is::" + ws.readyState);
+    // Payload
+    ws.send(
+      '{ "type": "subscription", "id": "bf5d15d0-415f-11ec-b255-ad01e0712738", "data" : { "products": ["BTC-USD"], "quantity": "1.0", "level": true, "high": true, "low": true } }'
+    );
     waitFiveSec(ws);
   });
 
+  // Dependency Injection - send the websocekt seesion from outside
   const RFS = await streamRequest(ws);
-  logger.info(RFS);
+  logger.info(JSON.stringify(RFS));
 })();
